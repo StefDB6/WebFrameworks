@@ -1,8 +1,4 @@
 
-const random : number = Math.random();
-const number1: number = Math.floor(Math.random() * 10)
-const number2: number = Math.floor(Math.random() * 10)
-
 const add = (a:number, b:number) => {
   return a + b;
 }
@@ -12,6 +8,11 @@ const multiply = (a:number, b:number) => {
 }
 
 const App = () => {
+
+    const random : number = Math.random();
+    const number1: number = Math.floor(Math.random() * 10)
+    const number2: number = Math.floor(Math.random() * 10)
+    
     return (
         <>
             <h1>Labo 1</h1>
