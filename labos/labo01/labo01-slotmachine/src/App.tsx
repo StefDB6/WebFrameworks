@@ -11,11 +11,13 @@ const App = () => {
       "https://similonap.github.io/webframeworks-cursus/assets/images/slot-prune-e486170eb7c22e6e9aed5de0316b5209.png",
       "https://similonap.github.io/webframeworks-cursus/assets/images/slot-seven-e71e0d10655b5491197925624b5ac139.png"
     ]
-
     return (
         <>
             <h1>Labo 1 : Slots</h1>
-            {images.map((image, index)=> <img key={index} src={image} alt="" />)}
+            {images.map((image, index)=> (
+              <img key={index} src={image} alt="" />
+              )
+            )}
 
             {/* 
             <img src={images[1]} alt="" />
