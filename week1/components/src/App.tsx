@@ -1,35 +1,97 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+interface Game {
+  id: number
+  name: string,
+  releaseYear: number,
+  sales: number
+}
 
+const games : Game[] = [
+  {
+    id: 0,
+    name: "World of Warcraft",
+    releaseYear: 2004,
+    sales: 5
+  },
+  {
+    id: 1,
+    name: "Valheim",
+    releaseYear: 2021,
+    sales: 10
+  },
+  {
+    id: 2,
+    name: "Minecraft",
+    releaseYear: 2011,
+    sales: 20
+  }
+]
+
+interface Game {
+  id: number
+  name: string,
+  releaseYear: number,
+  sales: number
+}
+
+const altGames : Game[] = [
+  {
+    id: 0,
+    name: "Hollow Knight: Silksong",
+    releaseYear: 2025,
+    sales: 500000
+  },
+  {
+    id: 1,
+    name: "Skyrim",
+    releaseYear: 2001,
+    sales: 212121
+  },
+  {
+    id: 2,
+    name: "Trimps",
+    releaseYear: 2014,
+    sales: 200
+  }
+]
+
+
+interface ListItemProps {
+  game : Game;
+}
+
+interface GameListProps {
+  games: Game[];
+}
+
+const ListItem = (props: ListItemProps) => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <React.Fragment >
+      <h2>{props.game.name} ({props.game.releaseYear})</h2>
+      <p>Aantal keer verkocht: {props.game.sales}</p>
+    </React.Fragment>
   )
 }
 
-export default App
+const GameList = (props: GameListProps) => {
+  return (
+    <>
+      {props.games.map((game: Game) => 
+        <ListItem key={game.id} game={game}/>
+      )}
+    </>
+  );
+}
+
+const App = () => {
+  return (
+    <div>
+      <h1>Game List:</h1>
+      <GameList games={games}/>
+      <h1>Another Game List:</h1>
+      <GameList games={altGames}/>
+    </div>
+  );
+}
+export default App;
