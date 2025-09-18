@@ -84,14 +84,30 @@ const GameList = (props: GameListProps) => {
   );
 }
 
+interface ColorSquareProps {
+  color? : string;
+  size? : number;
+}
+
+const ColorSquare = ({size = 100, color = "red"}: ColorSquareProps) => {
+  return (
+    <div style={{width:size, height:size, backgroundColor: color}}></div>
+  )
+}
+
 const App = () => {
   return (
-    <div>
+    <>
       <h1>Game List:</h1>
       <GameList games={games}/>
       <h1>Another Game List:</h1>
       <GameList games={altGames}/>
-    </div>
+
+      <ColorSquare/>
+      <ColorSquare color="yellow"/>
+      <ColorSquare color="green"/>
+      <ColorSquare color="blue" size={150}/>
+    </>
   );
 }
 export default App;
