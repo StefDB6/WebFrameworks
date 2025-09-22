@@ -1,7 +1,5 @@
 import "./App.css"
 
-
-
 const App = () => {
   
   const handleChange = (value: string, index: number) => {
