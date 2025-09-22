@@ -1,5 +1,3 @@
-import type { ReactElement } from "react"
-
 interface CheckboxProps {
     size: number
 }
