@@ -16,10 +16,14 @@ const App = () => {
     "red"
   ];
 
+  const getRandomColor = () => {
+    return colorArray[Math.floor(Math.random() * 11)]
+  }
+
   return(
     <>
     {
-      Array.from({length:10}, (_, i) => <ColorSquare size={150} color={colorArray[Math.floor(Math.random() * 11)]}/>)
+      Array.from({length:10}, (_, i) => <ColorSquare size={150} color={getRandomColor()}/>)
     }
     </>
   )

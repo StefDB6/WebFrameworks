@@ -10,7 +10,9 @@ const ColorSquare = (props: ColorSquareProps) => {
     }
 
     return(
-        <div onClick={handleClick} style={{width: props.size, height: props.size, backgroundColor: props.color, display: "inline-block"}}></div>
+        <div style={
+            {width: props.size, height: props.size, backgroundColor: props.color, display: "inline-block"}
+        } onClick={handleClick}></div>
     )
 }
 
