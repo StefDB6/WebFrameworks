@@ -43,7 +43,9 @@ const App = () => {
       }
       <ul>
         {
-          shoppingList.map((item, i) => <li key={i}>{item.name} | {item.amount} <button onClick={(e) => setshoppingList(shoppingList => [...shoppingList].filter((_value, index) => i != index))}>remove</button></li>)
+          shoppingList.map((item, i) => <li key={i}>{item.name} | {item.amount} <button onClick={
+            () => setshoppingList(shoppingList => [...shoppingList].filter((_value, index) => i != index))
+          }>remove</button></li>)
         }
       </ul>
 
