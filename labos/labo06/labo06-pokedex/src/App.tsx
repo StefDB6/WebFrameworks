@@ -36,7 +36,7 @@ const App = () => {
   return(
     <>
       <input type="number" value={limit} onChange={(e) => {setLimit(Number(e.target.value))}}/>
-      <p>{error}</p>  
+      <p>{error}</p>
       <BeatLoader loading={loading}/>
       {pokemon && (
         pokemon.map((poke, index) => {
