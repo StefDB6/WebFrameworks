@@ -9,7 +9,7 @@ interface IPokemonContext{
 }
 
 //export const PokemonContext = createContext<IPokemonContext | undefined>(undefined)
-export const PokemonContext = createContext<IPokemonContext>({pokemon: [], loading: false, error: null, getPokemonById: (id: number) => { return undefined }})
+export const PokemonContext = createContext<IPokemonContext>({pokemon: [], loading: false, error: null, getPokemonById: (_: number) => { return undefined }})
 
 const PokemonProvider = ({children} : { children: ReactNode}) => {
 
