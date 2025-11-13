@@ -20,7 +20,6 @@ const App = () => {
           uri: "https://i.pinimg.com/736x/98/16/a5/9816a5f7c4fdb8ba3397f4e2b83cba28.jpg",
         }}
       />
-
     </View>
   );
 }
